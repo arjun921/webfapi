@@ -22,6 +22,7 @@ def ls():
 def cd():
     global PWD
     argv = bottle.request.json['argv']
+    print (argv)
     command = ' '.join(['cd', PWD, '&&', 'cd'] + argv)
     PWD = os.path.join(PWD, argv[0])
     print(PWD)
